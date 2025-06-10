@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
-import SomeContext from './SomeContext'
 import styled from 'styled-components'
+import { ThemeContext } from "./ThemeContext";
 
 const FlexDiv = styled.div`
   display: flex;
@@ -36,7 +36,7 @@ const Fill = styled.span`
 
 function Header() {
   const [checked, setChecked] = useState(false);
-  const { darkMode, setDarkMode } = useContext(SomeContext)
+  const { toggleTheme } = useContext(ThemeContext);
 
     return(
       <FlexDiv>
@@ -44,7 +44,7 @@ function Header() {
         <Label>
           <HiddenCheckbox
             checked={checked}
-            onChange={() => {setChecked(!checked); setDarkMode(!darkMode);}}
+            onChange={() => {setChecked(!checked); toggleTheme();}}
           />
           <Fill checked={checked} />Darkmode
         </Label>

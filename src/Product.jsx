@@ -16,7 +16,7 @@ function Product(props) {
     <ProductDiv className="Product">
       <ProductImg src={props.product.image} alt="" />
       <h5>{props.product.title}</h5>
-      <p>{props.product.description}</p>
+      {/* <p>{props.product.description}</p> */}
       <p>${props.product.price}</p>
     </ProductDiv>
   )

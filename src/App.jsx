@@ -1,39 +1,17 @@
-import { useEffect, useState } from 'react'
 import './App.css'
-import Product from './Product'
 import Header from './Header'
-import SomeContext from './SomeContext'
+import Home from './Home'
+import {ThemeProvider} from './ThemeContext'
 
 function App() {
-  const [products, setProducts] = useState(null)
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then((response) => response.json())
-      .then((result) => {
-        setProducts(result)
-      })
-  })
-
-  if (darkMode) {
-      document.body.style.backgroundColor = "rgb(10 10 10)";
-      document.body.style.color = "rgba(255, 255, 255, .95)";
-    } else {
-      document.body.style.backgroundColor = "rgba(255, 255, 255, .95)";
-      document.body.style.color = "rgb(10 10 10)";
-    }
-
   return (
     <>
-      <SomeContext value={{ darkMode, setDarkMode }}>
+      <ThemeProvider>
         <Header></Header>
         <main>
-          {products && products.map(product =>
-            <Product key={product.id} product={product}/>
-          )}
+          <Home></Home>
         </main>
-      </SomeContext>
+      </ThemeProvider>
     </>
   )
 }
