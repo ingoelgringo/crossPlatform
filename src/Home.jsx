@@ -1,4 +1,4 @@
-import Product from './Product'
+import ProductCard from './ProductCard'
 import { useEffect, useState } from 'react'
 
 function Home() {
@@ -10,11 +10,11 @@ useEffect(() => {
     .then((result) => {
       setProducts(result)
     })
-  })
+  }, [])
 
   return (
     <>
-      {products && products.map(product => <Product key={product.id} product={product}/>)}
+      {products && products.map(product => <ProductCard key={product.id} product={product}/>)}
     </>
   )
 }

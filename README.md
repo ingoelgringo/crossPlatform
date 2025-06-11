@@ -2,13 +2,13 @@
 
 [x] Webbanrop görs via useEffect och information från en eller flera webbtjänster visas upp (Använd inte Cities-tjänsten; Det går bra att hämta från en lokal JSON-fil istället för en extern webbtjänst)
 [x] Använd { och } likt hur {{ och }} skulle ha använts i Vue.js
-[] Använd { och } likt hur v-bind/: skulle ha använts i Vue.js (key-props (relaterade till map) räknas inte)
+[x] Använd { och } likt hur v-bind/: skulle ha använts i Vue.js (key-props (relaterade till map) räknas inte)
 [x] Använd useState likt hur data skulle ha använts i Vue.js
 [x] Använd && likt hur v-if skulle ha använts i Vue.js
 [] Använd conditional/ternery-operatorn (? och :) likt hur v-if och v-else skulle ha använts i Vue.js
 [x] Använd map och key likt hur v-for och key skulle ha använts i Vue.js
 [] Använd events likt hur v-on/@ skulle ha använts i Vue.js
-[] En Single Page Application, bestående av minst två webbsidor, ska skapas med React Router eller liknande
+[x] En Single Page Application, bestående av minst två webbsidor, ska skapas med React Router eller liknande
 [x] Använd komponenter
 [x] Använd props
 [] Omfattningen på projektet ska vara tillräckligt stor utifrån hur länge projektet pågår
@@ -17,7 +17,7 @@
 
 [x] Använd useContext eller liknande för (viss) tillståndshantering (Värden ska både kunde sättas och hämtas)
 [x] Använd styled-components eller liknande (en CSS-in-JS-lösning) för stilsättning
-[] Låt en komponent anpassas efter ett adressparametervärde
+[x] Låt en komponent anpassas efter ett adressparametervärde
 [x] Det finns en ESLint-konfiguration för projektet, som alla filer följer
 [x] Alla filer är formaterade med Prettier eller liknande
 [] Omfattningen på projektet ska vara större än för G

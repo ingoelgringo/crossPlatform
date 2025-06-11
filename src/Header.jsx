@@ -11,11 +11,11 @@ const Label = styled.label`
   position: relative;
   width: 50px;
   height: 24px;
-  background: #fff;
+  background: ${props => (props.checked ? "white" : "black")};
   display: inline-block;
   border-radius: 100px;
-  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
   cursor: pointer;
+  transition: 0.5s;
 `;
 
 const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
@@ -29,9 +29,9 @@ const Fill = styled.span`
   top: 2px;
   width: 20px;
   height: 20px;
-  background: black;
+  background: ${props => (props.checked ? "black" : "white")};
   border-radius: 50%;
-  transition: 0.4s left;
+  transition: 0.5s;
 `;
 
 function Header() {
@@ -41,7 +41,7 @@ function Header() {
     return(
       <FlexDiv>
         <h1>E-shop</h1>
-        <Label>
+        <Label checked={checked}>
           <HiddenCheckbox
             checked={checked}
             onChange={() => {setChecked(!checked); toggleTheme();}}
