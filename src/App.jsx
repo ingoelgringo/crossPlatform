@@ -2,6 +2,7 @@ import './App.css'
 import Header from './Header'
 import Home from './Home'
 import Product from './Product'
+import Cart from './Cart'
 import {ThemeProvider} from './ThemeContext'
 import {
   createHashRouter,
@@ -15,28 +16,23 @@ function App() {
       children: [
         { element: <Home />, path: '/' },
         { element: <Product />, path: '/:productId' },
+        { element: <Cart />, path: '/cart' },
       ],
       element: (
         <>
-          <main>
-            <Outlet />
-          </main>
+          <ThemeProvider>
+            <Header></Header>
+            <main>
+              <Outlet/>
+            </main>
+          </ThemeProvider>
         </>
       )
     }
   ])
 
   // return <RouterProvider router={router} />
-  return (
-    <>
-      <ThemeProvider>
-        <Header></Header>
-        <main>
-          <RouterProvider router={router} />
-        </main>
-      </ThemeProvider>
-    </>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App

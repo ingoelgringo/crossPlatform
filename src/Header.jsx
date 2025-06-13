@@ -1,6 +1,8 @@
 import { useState, useContext } from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from "./ThemeContext";
+import { Link } from 'react-router-dom';
+import cart from './assets/cart.png'
 
 const FlexDiv = styled.div`
   display: flex;
@@ -34,20 +36,52 @@ const Fill = styled.span`
   transition: 0.5s;
 `;
 
+const CartContainer = styled.div`
+  position: relative;
+`
+
+const CartImg = styled.img`
+  margin-right: 20px;
+  width: 3em;
+  height: 3em;
+  filter: ${props => (props.checked ? "invert(1)" : "none")};
+  transition: 0.5s;
+`
+
+const CartBadge = styled.div`
+  position: absolute;
+  top: 8px;
+  right: 24px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: green;
+`
+
 function Header() {
   const [checked, setChecked] = useState(false);
-  const { toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme, cartItems } = useContext(ThemeContext);
 
     return(
       <FlexDiv>
-        <h1>E-shop</h1>
-        <Label checked={checked}>
-          <HiddenCheckbox
-            checked={checked}
-            onChange={() => {setChecked(!checked); toggleTheme();}}
-          />
-          <Fill checked={checked} />Darkmode
-        </Label>
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <h1>E-shop</h1>
+        </Link>
+        <FlexDiv>
+          <Link to="/cart">
+            <CartContainer>
+              <CartImg src={cart} alt="" checked={checked}/>
+              { cartItems.length > 0 && <CartBadge></CartBadge>}
+            </CartContainer>
+          </Link>
+          <Label checked={checked}>
+            <HiddenCheckbox
+              checked={checked}
+              onChange={() => {setChecked(!checked); toggleTheme();}}
+            />
+            <Fill checked={checked} />Darkmode
+          </Label>
+        </FlexDiv>
       </FlexDiv>
     )
 }

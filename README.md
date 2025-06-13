@@ -5,9 +5,9 @@
 [x] Använd { och } likt hur v-bind/: skulle ha använts i Vue.js (key-props (relaterade till map) räknas inte)
 [x] Använd useState likt hur data skulle ha använts i Vue.js
 [x] Använd && likt hur v-if skulle ha använts i Vue.js
-[] Använd conditional/ternery-operatorn (? och :) likt hur v-if och v-else skulle ha använts i Vue.js
+[x] Använd conditional/ternery-operatorn (? och :) likt hur v-if och v-else skulle ha använts i Vue.js
 [x] Använd map och key likt hur v-for och key skulle ha använts i Vue.js
-[] Använd events likt hur v-on/@ skulle ha använts i Vue.js
+[x] Använd events likt hur v-on/@ skulle ha använts i Vue.js
 [x] En Single Page Application, bestående av minst två webbsidor, ska skapas med React Router eller liknande
 [x] Använd komponenter
 [x] Använd props

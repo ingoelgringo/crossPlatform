@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 const ProductDiv = styled.div`
   width: 300px;
+  padding: 10px;
 `
 
 const ProductImg = styled.img`
@@ -13,7 +14,7 @@ const ProductImg = styled.img`
 
 function ProductCard(props) {
   return (
-    <Link to={`/${props.product.id}`}>
+    <Link to={`/${props.product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
       <ProductDiv>
           <ProductImg src={props.product.image} alt="" />
           <h5>{props.product.title}</h5>
